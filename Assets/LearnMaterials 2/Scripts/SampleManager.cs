@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class SampleManager : MonoBehaviour
 {
+    [SerializeField]
+    private List<SampleScript> target;
+
     [ContextMenu("Start")]
     void Use()
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Object");
-
-        foreach (GameObject obj in objects)
+        foreach (SampleScript obj in target)
         {
-            var script = obj.GetComponent<SampleScript>();
-            if (script != null)
-                script.Use();
+            obj.Use();
         }
     }
 }
