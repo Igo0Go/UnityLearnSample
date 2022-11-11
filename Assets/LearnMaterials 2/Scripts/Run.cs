@@ -7,6 +7,7 @@ public class Run : MonoBehaviour
     [ContextMenu("Активировать модули")]
     public void Use()
     {
+
         var objects = FindObjectsOfType<SampleScript>();
         foreach (var script in objects)
         {
