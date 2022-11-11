@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveObjectScript : SampleScript
 {
+
     [Min(0)]
     public float moveSpeed = 1;
     public Vector3 translationPosition = new(3, 0);
