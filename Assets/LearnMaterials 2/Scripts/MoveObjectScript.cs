@@ -22,25 +22,25 @@ public class MoveObjectScript : SampleScript
     [ContextMenu("Активировать модуль")]
     public override void Use()
     {
-        StartCoroutine(Call());
+        //StartCoroutine(Call());
     }
 
-    private IEnumerator Call()
-    {
+    //private IEnumerator Call()
+    //{
         //transform.position = Vector3.Lerp(_startPos, _endPos, Time.time);
         //yield return null;
 
-        while (transform.position != _endPos)
-        {
-            var objTransform = gameObject.transform;
-            var direction = _endPos - objTransform.position;
-            objTransform.position += direction.normalized * Time.deltaTime * speed;
-            yield return null;
-        }
+        //while (transform.position != _endPos)
+        //{
+        //    var objTransform = gameObject.transform;
+        //    var direction = _endPos - objTransform.position;
+        //    objTransform.position += direction.normalized * Time.deltaTime * speed;
+        //    yield return null;
+        //}
 
         //float _z = Mathf.SmoothStep(_startPos, _endPos, Time.time /(1/speed));
         //Debug.Log(_z);
         //transform.position = _endPosVec;
         //yield return null;
-    }
+    //}
 }
