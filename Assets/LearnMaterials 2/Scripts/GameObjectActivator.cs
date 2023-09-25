@@ -7,7 +7,11 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1GP4_m0MzOF8L5t5pZxLChu3V_TFIq1czi1oJQ2X5kpU/edit?usp=sharing")]
 public class GameObjectActivator : MonoBehaviour
 {
+    [Space(20)] //отступ
+    [Header("Модуль")] //заголовок
+    [SerializeField] //добавила
     private List<StateContainer> targets;
+    [SerializeField] //добавила
     private bool debug;
 
     private void Awake()
@@ -17,10 +21,13 @@ public class GameObjectActivator : MonoBehaviour
             item.defaultValue = item.targetGO.activeSelf;
         }
     }
+    [ContextMenu("Переключить объекты")] //добавила в меню
     public void ActivateModule()
     {
         SetStateForAll();
+
     }
+    [ContextMenu("Переключить объекты в состояние по умолчанию")] //добавила в меню
     public void ReturnToDefaultState()
     {
         foreach (var item in targets)
@@ -29,7 +36,6 @@ public class GameObjectActivator : MonoBehaviour
             item.targetGO.SetActive(item.defaultValue);
         }
     }
-
     private void SetStateForAll()
     {
         for (int i = 0; i < targets.Count; i++)
