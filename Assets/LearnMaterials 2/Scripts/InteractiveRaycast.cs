@@ -9,7 +9,7 @@ public class InteractiveRaycast : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Left click pressed
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -32,11 +32,12 @@ public class InteractiveRaycast : MonoBehaviour
                     else
                     {
                         savedBox.AddNext(clickedBox);
+                        savedBox = null;
                     }
                 }
             }
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(1)) // Right click pressed
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
